@@ -11,14 +11,15 @@ BackTestingEngine = ctypes.POINTER(_BackTestingEngine) #pointer to ctype.
 class _CProject(ctypes.Structure): pass 
 BackTestingProject = ctypes.POINTER(_CProject)
 
-interfaceDLL = ctypes.cdll.LoadLibrary(r"C:\Users\Andrew van Rensburg\repos\BacktestingEngine\TradingInteface\Debug\INTERFACE.dll")
+interfaceDLL = ctypes.cdll.LoadLibrary(r"C:\Users\Andrew van Rensburg\repos\BacktestingEngine\Debug\Interface.dll")
+
 #"C:\Users\Andrew van Rensburg\repos\BacktestingEngine\Engine\Debug\ENGINE.dll"
 # The DLL returns type CEngine (from C++ code). The below line will allow the type returned to be BackTestingEngine "C:\\Users\\Andrew van Rensburg\\repos\\BacktestingEngine\\TradingInteface\\Debug\\INTERFACE.dll
 # Keep in mind that ctypes assumes the default return type is int. 
-interfaceDLL.createInterface.restype = BackTestingEngine
+interfaceDLL.CreateInterface.restype = BackTestingEngine
 
-interfaceDLL.addHistoricalData.argtypes = [BackTestingEngine, ctypes.c_char_p]
-interfaceDLL.addHistoricalData.restype = ctypes.c_uint
+interfaceDLL.AddHistoricalData.argtypes = [BackTestingEngine, ctypes.c_char_p]
+interfaceDLL.AddHistoricalData.restype = ctypes.c_uint
 
 class Interface(object):
 
@@ -26,10 +27,10 @@ class Interface(object):
     _handle = None
 
     def __init__(self):
-        self._handle = interfaceDLL.createInterface()
+        self._handle = interfaceDLL.CreateInterface()
 
     def addHistoricalData(self, path):
-        interfaceDLL.addHistoricalData(self._handle, path)
+        interfaceDLL.AddHistoricalData(self._handle, path)
 
 
 interface = Interface()
