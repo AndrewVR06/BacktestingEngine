@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "Engine.h"
 #include "CSVReader.h"
+#include "Simulator.h"
 
 #include <fstream>
 #include <iostream>
