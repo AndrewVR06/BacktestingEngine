@@ -18,8 +18,10 @@ void Engine::addHistoricalData(std::string path)
 	m_CSVreader->readCSV(m_CachedData, path);
 	for (auto it = m_CachedData.begin(); it != m_CachedData.end(); it++)
 	{
-		it->get()->displayData();
+		//it->get()->displayData();
 	}
+
+	std::cout << __func__ << std::endl;
 }
 
 

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\TradingStrategies">
+      <UniqueIdentifier>{5ad3101a-2429-4b8b-81cb-062fd0e535be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -21,34 +24,25 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DataType.h">
+    <ClInclude Include="Strategies.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CSVReader.h">
+    <ClInclude Include="Signal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Datetime.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine.h">
+    <ClInclude Include="TradingStrategies.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Engine.cpp">
+    <ClCompile Include="Strategies.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DataType.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CSVReader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Datetime.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="MovingAveragesStrategies.cpp">
+      <Filter>Source Files\TradingStrategies</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

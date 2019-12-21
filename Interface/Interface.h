@@ -15,7 +15,6 @@ public:
 
 private:
 
-	int t = 3;
 	std::unique_ptr<Engine> m_Engine = nullptr;
 
 };

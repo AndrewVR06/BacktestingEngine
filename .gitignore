@@ -5,8 +5,13 @@
 *.tlog
 *.pdb
 *.idb
+*.filters
+*.vcxproj
 
 #ignore debug folder for now
 Debug/*
+Engine/Debug/*
+Interface/Debug/*
+Strategies/Debug/*
 
 
