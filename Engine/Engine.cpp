@@ -21,8 +21,6 @@ void Engine::addHistoricalData(std::string path)
 	{
 		//it->get()->displayData();
 	}
-
-	std::cout << __func__ << std::endl;
 }
 
 
