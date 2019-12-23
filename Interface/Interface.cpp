@@ -4,14 +4,14 @@
 Interface::Interface()
 {
 	m_Engine = std::make_unique<Engine>(Engine());
-	m_Strategy = std::make_unique<Strategy>(Strategy());
+	m_StrategyList = std::make_unique<StrategyInterface>(StrategyInterface());
 }
 
 Interface::~Interface()
 {
 	if (m_StrategyList_CLinkage != nullptr)
 	{
-		auto list = m_Strategy->GetStrategyList(); //race condition for m_Strategy? when does shared ptr free?
+		auto list = m_StrategyList->GetStrategyList(); //race condition for m_Strategy? when does shared ptr free?
 
 		for (unsigned int i = 0; i < list.size() + 1; i++)
 		{
@@ -31,7 +31,7 @@ char** Interface::GetStrategyList()
 	//If the list has not yet been created then create a new one. 
 	if (m_StrategyList_CLinkage == nullptr)
 	{
-		auto list = m_Strategy->GetStrategyList();
+		auto list = m_StrategyList->GetStrategyList();
 		int listSize = (int) list.size();
 		m_StrategyList_CLinkage = new char* [listSize+1];
 		

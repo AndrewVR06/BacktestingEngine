@@ -8,12 +8,17 @@
 #include <iostream>
 
 
-std::vector<std::string> Strategy::GetStrategyList()
+Strategy::Strategy(std::string name)
 {
-	std::vector<std::string> nameList;
-	for (auto it = m_StrategyList.begin(); it != m_StrategyList.end(); it++)
-	{
-		nameList.emplace_back(it->first);
-	}
-	return nameList;
+	m_StrategyName = name;
+}
+
+Signal Strategy::tick()
+{
+	return Signal::BUY;
+}
+
+std::string Strategy::GetStrategyName() const
+{
+	return m_StrategyName;
 }

@@ -1,6 +1,7 @@
 #pragma once
 
-#include "MovingAveragesStrategies.h"
+#include "Signal.h"
+#include "Indicator.h"
 
 #include <vector>
 #include <memory>
@@ -12,15 +13,16 @@ class Strategy
 {
 public:
 
-	std::vector<std::string> GetStrategyList();
+	Strategy(std::string);
+
+	virtual Signal tick();
+
+	virtual std::string GetStrategyName() const;
 
 private:
 
-	/// External list that hold all functions and their names. All functions created in the implementation file need to be added here.
-	std::unordered_map<std::string, std::function<Signal(void)>> m_StrategyList =
-	{
-		{"SMA5_over_SMA15", SMA5_over_SMA15},
-	};
+	std::string m_StrategyName;
 
-private:
+	std::vector<Indicator> m_IndicatorList;
+
 };

@@ -36,3 +36,29 @@ void Datetime::displayData() const
 		std::cout << it->m_Year << "-" << it->m_Month << "-" << it->m_Day << std::endl;
 	}
 }
+
+DataFrequency Datetime::GetIntradataPeriod() const
+{
+	if (m_DataValues.size() < 2) return DataFrequency::ERR;
+
+	DateTimeStruct diff = m_DataValues[1] - m_DataValues[0];
+
+	if (diff.m_Day == 1)
+	{
+		return DataFrequency::DAILY;
+	}
+	else if (diff.m_Hour == 1)
+	{
+		return DataFrequency::HOURLY;
+	}
+	else if (diff.m_Minute == 1)
+	{
+		return DataFrequency::MINUTE;
+	}
+	else if (diff.m_Second == 1)
+	{
+		return DataFrequency::SECOND;
+	}
+
+	return DataFrequency::ERR;
+}

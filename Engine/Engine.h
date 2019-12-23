@@ -15,6 +15,8 @@ public:
 
 	void addHistoricalData(std::string path);
 
+	void CreateSimulator();
+
 private:
 
 	//2d array to cache historical data

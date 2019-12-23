@@ -23,4 +23,8 @@ void Engine::addHistoricalData(std::string path)
 	}
 }
 
+void Engine::CreateSimulator()
+{
+}
+
 

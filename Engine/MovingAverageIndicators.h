@@ -10,8 +10,6 @@ class SMA : public Indicator
 {
 public:
 	SMA(int);
-
-	double operator[](int) override;
 };
 
 //Defines the Exponential Moving average class indicator

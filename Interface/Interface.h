@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Engine.h"
-#include "Strategies.h"
+#include "StrategyInterface.h"
 
 #include <memory>
 #include <Windows.h>
@@ -24,7 +24,7 @@ private:
 
 	std::unique_ptr<Engine> m_Engine = nullptr;
 
-	std::unique_ptr<Strategy> m_Strategy = nullptr;
+	std::unique_ptr<StrategyInterface> m_StrategyList = nullptr;
 
 	// Variable that stores the strategy list without using anything within the std;
 	char** m_StrategyList_CLinkage;

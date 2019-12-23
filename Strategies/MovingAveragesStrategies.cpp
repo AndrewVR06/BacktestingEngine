@@ -6,13 +6,12 @@
 #include "pch.h"
 #include "MovingAveragesStrategies.h"
 #include "Signal.h"
-#include "MovingAverage.h" //imported from Engine. Defines all moving average indicators.
+//#include "MovingAverage.h" //imported from Engine. Defines all moving average indicators.
 
 #include <string>
 #include <iostream>
 
-Signal SMA5_over_SMA15()
+Signal SMA5_over_SMA15::tick()
 {
-	std::cout << "In strategy SMA5_over_SMA15" << std::endl;
-	return Signal::HOLD;
+	return Signal::BUY;
 }
