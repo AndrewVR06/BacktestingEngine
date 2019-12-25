@@ -23,6 +23,5 @@ private:
 		SMA5_over_SMA15("SMA5_over_SMA15"),
 	};
 	
-private:
 };
 

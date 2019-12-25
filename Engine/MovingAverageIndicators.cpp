@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "MovingAverage.h"
+#include "MovingAverageIndicators.h"
 
 SMA::SMA(int period) : Indicator(period)
 {
