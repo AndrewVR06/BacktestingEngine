@@ -24,7 +24,7 @@ private:
 	/// List that hold all functions and their names. All functions created in the implementation file need to be added here.
 	std::vector<std::shared_ptr<Strategy>> m_StrategyList =
 	{
-		//SMA5_over_SMA15("SMA5_over_SMA15"),
+		std::make_shared<SMA5_over_SMA15>("SMA5_over_SMA15"),
 	};
 	
 };
