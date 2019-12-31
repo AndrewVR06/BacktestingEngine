@@ -13,16 +13,10 @@ class Strategy
 {
 public:
 
-	Strategy(std::string);
+	virtual Signal tick() = 0;
 
-	virtual Signal tick();
+	virtual std::string GetStrategyName() const = 0;
 
-	virtual std::string GetStrategyName() const;
-
-private:
-
-	std::string m_StrategyName;
-
-	std::vector<Indicator> m_IndicatorList;
-
+protected:
+	std::string StrategyName;
 };

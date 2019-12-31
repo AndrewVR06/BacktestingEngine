@@ -23,6 +23,9 @@ interfaceDLL.AddHistoricalData.restype = ctypes.c_void_p
 interfaceDLL.GetStrategyList.argtypes = [BackTestingEngine]
 interfaceDLL.GetStrategyList.restype =  ctypes.POINTER(ctypes.c_char_p)
 
+interfaceDLL.SelectStrategy.argtypes = [BackTestingEngine, ctypes.c_char_p]
+interfaceDLL.AddHistoricalData.restype = ctypes.c_void_p
+
 class Interface(object):
 
     _loadedDLL = interfaceDLL
@@ -36,6 +39,9 @@ class Interface(object):
 
     def GetStrategyList(self):
         return interfaceDLL.GetStrategyList(self._handle)
+
+    def SelectStrategy(self, name):
+        interfaceDLL.SelectStrategy(self._handle, name)
 
 interface = Interface()
 #interface.addHistoricalData(b"C:/Users/Andrew van Rensburg/repos/BacktestingEngine/Frontend/aapl.txt")
@@ -51,3 +57,4 @@ for i in stringlist:
     print (i.decode("utf-8"))
 
 #print (stringlist[0])
+interface.SelectStrategy(b"SMA5_over_SMA15")

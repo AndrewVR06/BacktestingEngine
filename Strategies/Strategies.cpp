@@ -6,19 +6,3 @@
 #include "Strategies.h"
 
 #include <iostream>
-
-
-Strategy::Strategy(std::string name)
-{
-	m_StrategyName = name;
-}
-
-Signal Strategy::tick()
-{
-	return Signal::BUY;
-}
-
-std::string Strategy::GetStrategyName() const
-{
-	return m_StrategyName;
-}

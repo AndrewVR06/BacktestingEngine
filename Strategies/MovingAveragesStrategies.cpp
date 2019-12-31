@@ -13,5 +13,11 @@
 
 Signal SMA5_over_SMA15::tick()
 {
+	std::cout << "tick" << std::endl;
 	return Signal::BUY;
+}
+
+std::string SMA5_over_SMA15::GetStrategyName() const
+{
+	return m_StrategyName;
 }
