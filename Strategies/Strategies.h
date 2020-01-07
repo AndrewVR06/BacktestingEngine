@@ -17,6 +17,8 @@ public:
 
 	virtual std::string GetStrategyName() const = 0;
 
+	virtual std::unique_ptr<std::vector<std::shared_ptr<Indicator>>> GetIndicators() const = 0;
+
 protected:
 	std::string StrategyName;
 };

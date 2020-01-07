@@ -18,7 +18,7 @@ public:
 
 	void AddHistoricalData(const char*);
 
-	void SelectStrategy(const char*);
+	void BeginSimulation(const char*);
 
 	char** GetStrategyList();
 
@@ -38,8 +38,9 @@ extern "C"
 {
 	__declspec(dllexport) Interface* CreateInterface();
 	__declspec(dllexport) void AddHistoricalData(Interface*, const char*);
-	__declspec(dllexport) void SelectStrategy(Interface*, const char*);
 	__declspec(dllexport) char ** GetStrategyList(Interface*);
+	__declspec(dllexport) void BeginSimulation(Interface*, const char*);
+
 }
 
 Interface* CreateInterface()
@@ -57,9 +58,9 @@ char** GetStrategyList(Interface* in)
 	return in->GetStrategyList();
 }
 
-void SelectStrategy(Interface* in, const char* name)
+void BeginSimulation(Interface* in, const char* strategy)
 {
-	in->SelectStrategy(name);
+	in->BeginSimulation(strategy);
 }
 
 

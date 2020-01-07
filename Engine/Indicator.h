@@ -4,9 +4,9 @@ class Indicator
 {
 public:
 
-	Indicator(int period) : m_Period(period) {}
+	virtual void PrintName() const = 0;
 
-private:
+protected:
 	
 	int m_Period;
 };

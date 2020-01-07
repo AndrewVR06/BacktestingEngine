@@ -5,7 +5,7 @@
 
 #include "CSVReader.h"
 #include "DataType.h"
-#include "Simulator.h"
+#include "Strategies.h"
 
 class Engine {
 public:
@@ -15,15 +15,16 @@ public:
 
 	void addHistoricalData(std::string path);
 
-	void CreateSimulator();
+	void BeginSimulation(Strategy*);
+
+	void SetSimulatorStrategy(Strategy*);
 
 private:
 
 	//2d array to cache historical data
 	std::vector<std::shared_ptr<DataType>> m_CachedData;
 
-	//Pointer to the class that shall perform the simulation
-	std::unique_ptr<Simulator> m_Simulator = nullptr;
+	std::shared_ptr<Strategy> m_SimulatorStrategy;
 
 	std::unique_ptr<CSVReader> m_CSVreader = nullptr;
 

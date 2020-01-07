@@ -48,19 +48,11 @@ char** Interface::GetStrategyList()
 	return m_StrategyList_CLinkage;
 }
 
-void Interface::SelectStrategy(const char* strategyName)
+void Interface::BeginSimulation(const char* strategyName)
 {
-	auto chosenStrategy = m_StrategyInterface->GetStrategy(strategyName);
-	if (chosenStrategy == nullptr)
-	{
-		std::cout << "NULLPTR" << std::endl;
-	}
-	else
-	{
-		std::cout << "Strategy name is " << chosenStrategy->GetStrategyName() << std::endl;
-		std::cout << "Type is " << typeid(chosenStrategy).name() << std::endl;
-		chosenStrategy->tick();
-	}
+	Strategy* chosenStrategy = m_StrategyInterface->GetStrategy(strategyName);
+	m_Engine->BeginSimulation(chosenStrategy);
 }
+
 
 

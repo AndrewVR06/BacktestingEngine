@@ -2,7 +2,6 @@
 #include "pch.h"
 #include "Engine.h"
 #include "CSVReader.h"
-#include "Simulator.h"
 
 #include <fstream>
 #include <iostream>
@@ -23,8 +22,17 @@ void Engine::addHistoricalData(std::string path)
 	}
 }
 
-void Engine::CreateSimulator()
+void Engine::BeginSimulation(Strategy* strategy)
 {
+	SetSimulatorStrategy(strategy);
+
+	auto temp = m_SimulatorStrategy->GetIndicators();
+
+}
+
+void Engine::SetSimulatorStrategy(Strategy* strategy)
+{
+	m_SimulatorStrategy.reset(strategy);
 }
 
 

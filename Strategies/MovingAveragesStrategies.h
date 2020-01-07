@@ -25,6 +25,8 @@ public:
 
 	virtual std::string GetStrategyName() const override;
 
+	virtual std::unique_ptr<std::vector<std::shared_ptr<Indicator>>> GetIndicators() const override;
+
 private:
 	///List all indicators used.
 	std::shared_ptr<SMA> sma_5 = std::make_shared<SMA>(SMA(5));
@@ -33,6 +35,8 @@ private:
 	std::vector<std::shared_ptr<Indicator>> m_IndicatorList;
 
 	std::string m_StrategyName;
+
+	std::string ticker;
 
 };
 

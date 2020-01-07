@@ -21,7 +21,7 @@ Strategy* StrategyInterface::GetStrategy(std::string name)
 	{
 		if (name == (*it)->GetStrategyName())
 		{
-			return &(*(*it));
+			return (*it).get();
 		}
 	}
 	return nullptr;
